@@ -11,17 +11,17 @@ class ResponseResultList<T> {
 
     @SerializedName("page")
     @Expose
-    var page:Int = 0
-
-    @SerializedName("results")
-    @Expose
-    var results: List<T>? = null
+    var page: Int? = null
 
     @SerializedName("total_results")
     @Expose
-    var totalResults:Int = 0
+    var totalResults: Int? = null
 
     @SerializedName("total_pages")
     @Expose
-    var totalPages:Int = 0
+    var totalPages: Int? = null
+
+    @SerializedName("results")
+    @Expose
+    var results: ArrayList<T>? = null
 }

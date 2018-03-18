@@ -12,9 +12,8 @@ import retrofit2.http.Query
 
 interface RetrofitInterface {
 
-    @GET("tv/popular")
+    @GET("movie/popular")
     fun getPopular(@Query("api_key") apiKey: String,
                    @Query("language") language: String,
                    @Query("page") page: Int): Observable<ResponseResultList<ResultMovie>>
-
 }
