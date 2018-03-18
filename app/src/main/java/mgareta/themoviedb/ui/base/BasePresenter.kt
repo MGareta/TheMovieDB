@@ -6,7 +6,7 @@ import javax.inject.Inject
  * Created by marc on 16/03/18.
  */
 
-class BasePresenter<V : BaseView> {
+open class BasePresenter<V : BaseView> {
 
     @Inject
     lateinit var view: V
