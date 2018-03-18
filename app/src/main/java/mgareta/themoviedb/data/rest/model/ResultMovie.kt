@@ -11,60 +11,59 @@ import java.util.*
 
 class ResultMovie {
 
-    @SerializedName("poster_path")
+    @SerializedName("vote_count")
     @Expose
-    var posterPath: String? = null
-
-    @SerializedName("adult")
-    @Expose
-    var adult: Boolean? = null
-
-    @SerializedName("overview")
-    @Expose
-    var overview: String? = null
-
-    @SerializedName("release_date")
-    @Expose
-    var releaseDate: Date? = null
-
-    @SerializedName("genre_ids")
-    @Expose
-    var genreIds: List<Int>? = null
+    val voteCount: Int? = null
 
     @SerializedName("id")
     @Expose
-    var id: Long? = null
-
-    @SerializedName("original_title")
-    @Expose
-    var originalTitle: String? = null
-
-    @SerializedName("original_language")
-    @Expose
-    var originalLanguage: String? = null
-
-    @SerializedName("title")
-    @Expose
-    var title: String? = null
-
-    @SerializedName("backdrop_path")
-    @Expose
-    var backdropPath: String? = null
-
-    @SerializedName("popularity")
-    @Expose
-    var popularity: Double? = null
-
-    @SerializedName("vote_count")
-    @Expose
-    var voteCount: Long? = null
+    val id: Int? = null
 
     @SerializedName("video")
     @Expose
-    var video: Boolean? = null
+    val video: Boolean? = null
 
     @SerializedName("vote_average")
     @Expose
-    var voteAverage: Double = 0.toDouble()
+    val voteAverage: Double? = null
 
+    @SerializedName("title")
+    @Expose
+    val title: String? = null
+
+    @SerializedName("popularity")
+    @Expose
+    val popularity: Double? = null
+
+    @SerializedName("poster_path")
+    @Expose
+    val posterPath: String? = null
+
+    @SerializedName("original_language")
+    @Expose
+    val originalLanguage: String? = null
+
+    @SerializedName("original_title")
+    @Expose
+    val originalTitle: String? = null
+
+    @SerializedName("genre_ids")
+    @Expose
+    val genreIds: List<Int>? = null
+
+    @SerializedName("backdrop_path")
+    @Expose
+    val backdropPath: String? = null
+
+    @SerializedName("adult")
+    @Expose
+    val adult: Boolean? = null
+
+    @SerializedName("overview")
+    @Expose
+    val overview: String? = null
+
+    @SerializedName("release_date")
+    @Expose
+    val releaseDate: String? = null
 }

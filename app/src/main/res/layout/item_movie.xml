@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/image_view_poster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/image_view_desc_movie_poster"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/image_view_poster"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/TextViewTitle" />
+
+    <TextView
+        android:id="@+id/text_view_release_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_5"
+        app:layout_constraintTop_toBottomOf="@id/text_view_title"
+        app:layout_constraintStart_toEndOf="@id/image_view_poster"
+        style="@style/TextViewReleaseDate" />
+
+    <TextView
+        android:id="@+id/text_view_overview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_5"
+        app:layout_constraintTop_toBottomOf="@id/text_view_release_date"
+        app:layout_constraintStart_toEndOf="@id/image_view_poster"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/TextViewOverview" />
+
+</android.support.constraint.ConstraintLayout>
