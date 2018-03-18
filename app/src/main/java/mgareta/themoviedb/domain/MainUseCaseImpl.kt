@@ -2,6 +2,7 @@ package mgareta.themoviedb.domain
 
 import io.reactivex.Observable
 import mgareta.themoviedb.data.rest.ApiSource
+import mgareta.themoviedb.data.rest.model.ResponseResultList
 import mgareta.themoviedb.data.rest.model.ResultMovie
 
 /**
@@ -10,10 +11,9 @@ import mgareta.themoviedb.data.rest.model.ResultMovie
 
 class MainUseCaseImpl(private val apiSource: ApiSource) : MainUseCase {
 
-    override fun getPopularMovie(page: Int): Observable<List<ResultMovie>> {
+    override fun getPopularMovie(page: Int): Observable<ResponseResultList<ResultMovie>> {
         return apiSource.getPopularMovie(page).map({
-            resultList -> resultList.results!!
+            resultList -> resultList
         })
     }
-
 }

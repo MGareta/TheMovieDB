@@ -1,6 +1,7 @@
 package mgareta.themoviedb.domain
 
 import io.reactivex.Observable
+import mgareta.themoviedb.data.rest.model.ResponseResultList
 import mgareta.themoviedb.data.rest.model.ResultMovie
 
 /**
@@ -9,6 +10,6 @@ import mgareta.themoviedb.data.rest.model.ResultMovie
 
 interface MainUseCase {
 
-    fun getPopularMovie(page: Int): Observable<List<ResultMovie>>
+    fun getPopularMovie(page: Int): Observable<ResponseResultList<ResultMovie>>
 
 }
