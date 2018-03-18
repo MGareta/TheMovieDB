@@ -8,4 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- TextView Movie Title theme. -->
+    <style name="TextViewTitle" parent="TextAppearance.AppCompat.Title" />
+
+    <!-- TextView Movie Release Date theme. -->
+    <style name="TextViewReleaseDate" parent="TextAppearance.AppCompat.Subhead" />
+
+    <!-- TextView Movie Overview theme. -->
+    <style name="TextViewOverview" parent="TextAppearance.AppCompat.Body1" />
+
 </resources>
