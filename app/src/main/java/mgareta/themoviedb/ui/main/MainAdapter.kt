@@ -20,6 +20,8 @@ class MainAdapter<in T> : RecyclerView.Adapter<MainAdapter.MainMovieViewHolder>(
     private var movieList: ArrayList<ResultMovie> = ArrayList()
 
     fun setMovieList(movieList: ArrayList<ResultMovie>) {
+        this.movieList = ArrayList()
+
         this.movieList = movieList
         notifyDataSetChanged()
     }

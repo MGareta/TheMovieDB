@@ -9,5 +9,8 @@ import mgareta.themoviedb.data.rest.model.ResultMovie
  */
 
 interface ApiSource {
+
     fun getPopularMovie(page: Int): Observable<ResponseResultList<ResultMovie>>
+
+    fun getMovieSearch(page: Int, query: String): Observable<ResponseResultList<ResultMovie>>
 }

@@ -4,6 +4,10 @@ import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.View
+import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_main.*
 import mgareta.themoviedb.R
 import mgareta.themoviedb.data.rest.model.ResultMovie
@@ -58,6 +62,8 @@ class MainActivity : BaseActivity(), MainContract.View {
         recycler_view_movie.addItemDecoration(DividerItemDecoration(recycler_view_movie.context, layoutManager.orientation))
 
         recycler_view_movie.addOnScrollListener(recyclerViewOnScrollListener)
+
+        edit_text_search_movie.addTextChangedListener(editTextChangeListener)
     }
 
     override fun loadMovieList(movieList: ArrayList<ResultMovie>) {
@@ -81,6 +87,24 @@ class MainActivity : BaseActivity(), MainContract.View {
                     && firstVisibleItemPosition >= 0)) {
                 mainPresenter.decideLoadMore()
             }
+        }
+    }
+
+    private val editTextChangeListener = object: TextWatcher {
+
+        override fun afterTextChanged(s: Editable?) {
+            // do nothing
+        }
+
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            // do nothing
+        }
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            if (s?.length != 0)
+                mainPresenter.searchMovie(s.toString())
+            else
+                mainPresenter.onViewReady()
         }
     }
 }
