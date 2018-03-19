@@ -6,8 +6,6 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
-import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_main.*
 import mgareta.themoviedb.R
 import mgareta.themoviedb.data.rest.model.ResultMovie
@@ -22,7 +20,7 @@ import javax.inject.Inject
 
 class MainActivity : BaseActivity(), MainContract.View {
 
-    private lateinit var movieAdapter: MainAdapter<ResultMovie>
+    private lateinit var movieAdapter: MainAdapter
     private lateinit var layoutManager: LinearLayoutManager
 
     @Inject
@@ -48,10 +46,6 @@ class MainActivity : BaseActivity(), MainContract.View {
         return R.layout.activity_main
     }
 
-    override fun isConnect(): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
     override fun setUpUiComponents() {
         movieAdapter = MainAdapter()
         layoutManager = LinearLayoutManager(this)
@@ -74,9 +68,9 @@ class MainActivity : BaseActivity(), MainContract.View {
         movieAdapter.addMovieList(movieList)
     }
 
-    private val recyclerViewOnScrollListener = object: RecyclerView.OnScrollListener() {
+    private val recyclerViewOnScrollListener = object : RecyclerView.OnScrollListener() {
 
-        override fun onScrolled(recyclerView:RecyclerView, dx:Int, dy:Int) {
+        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
             super.onScrolled(recyclerView, dx, dy)
 
             val visibleItemCount = layoutManager.childCount
@@ -90,7 +84,7 @@ class MainActivity : BaseActivity(), MainContract.View {
         }
     }
 
-    private val editTextChangeListener = object: TextWatcher {
+    private val editTextChangeListener = object : TextWatcher {
 
         override fun afterTextChanged(s: Editable?) {
             // do nothing

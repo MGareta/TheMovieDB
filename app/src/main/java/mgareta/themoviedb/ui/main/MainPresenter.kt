@@ -12,7 +12,7 @@ import javax.inject.Inject
  * Created by marc on 16/03/18.
  */
 
-class MainPresenter @Inject constructor(private val mainUseCase: MainUseCase): BasePresenter<MainContract.View>(), MainContract.Presenter {
+class MainPresenter @Inject constructor(private val mainUseCase: MainUseCase) : BasePresenter<MainContract.View>(), MainContract.Presenter {
 
     private var pageIndex: Int = 1
     private var totalPages: Int = 1
@@ -54,13 +54,12 @@ class MainPresenter @Inject constructor(private val mainUseCase: MainUseCase): B
                     if (page == 1) {
                         view.loadMovieList(movies.results!!)
                         totalPages = movies.totalPages!!
-                    }
-                    else
+                    } else
                         view.loadMoreMovieList(movies.results!!)
 
                     pageIndex = movies.page?.inc()!!
-                }, {
-                    throwable -> Log.d("ERROR", "accept: " + throwable.message)
+                }, { throwable ->
+                    Log.d("ERROR", "accept: " + throwable.message)
                 })
     }
 
@@ -70,13 +69,12 @@ class MainPresenter @Inject constructor(private val mainUseCase: MainUseCase): B
                     if (page == 1) {
                         view.loadMovieList(movies.results!!)
                         totalPages = movies.totalPages!!
-                    }
-                    else
+                    } else
                         view.loadMoreMovieList(movies.results!!)
 
                     pageIndex = movies.page?.inc()!!
-                }, {
-                    throwable -> Log.d("ERROR", "accept: " + throwable.message)
+                }, { throwable ->
+                    Log.d("ERROR", "accept: " + throwable.message)
                 })
     }
 }
