@@ -12,4 +12,5 @@ interface MainUseCase {
 
     fun getPopularMovie(page: Int): Observable<ResponseResultList<ResultMovie>>
 
+    fun getMovieSearch(page: Int, query: String): Observable<ResponseResultList<ResultMovie>>
 }
