@@ -19,4 +19,8 @@ class ApiSourceImpl(retrofit: Retrofit) : ApiSource {
         return retrofitInterface.getPopular(BuildConfig.API_KEY, Locale.getDefault().language, page);
     }
 
+    override fun getMovieSearch(page: Int, query: String): Observable<ResponseResultList<ResultMovie>> {
+        return retrofitInterface.getMovieSearch(BuildConfig.API_KEY, Locale.getDefault().language, query, page)
+    }
+
 }
