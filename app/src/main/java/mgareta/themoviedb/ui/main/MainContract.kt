@@ -25,5 +25,7 @@ class MainContract {
 
         fun decideLoadMore()
 
+        fun searchMovie(query: String)
+
     }
 }
