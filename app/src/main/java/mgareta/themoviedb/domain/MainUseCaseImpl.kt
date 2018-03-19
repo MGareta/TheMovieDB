@@ -16,4 +16,10 @@ class MainUseCaseImpl(private val apiSource: ApiSource) : MainUseCase {
             resultList -> resultList
         })
     }
+
+    override fun getMovieSearch(page: Int, query: String): Observable<ResponseResultList<ResultMovie>> {
+        return apiSource.getMovieSearch(page, query).map({
+            resultList -> resultList
+        })
+    }
 }

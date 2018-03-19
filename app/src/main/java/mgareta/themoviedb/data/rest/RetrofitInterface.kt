@@ -16,4 +16,10 @@ interface RetrofitInterface {
     fun getPopular(@Query("api_key") apiKey: String,
                    @Query("language") language: String,
                    @Query("page") page: Int): Observable<ResponseResultList<ResultMovie>>
+
+    @GET("search/movie")
+    fun getMovieSearch(@Query("api_key") apiKey: String,
+                       @Query("language") language: String,
+                       @Query("query") query: String,
+                       @Query("page") page: Int): Observable<ResponseResultList<ResultMovie>>
 }
