@@ -5,6 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/edit_text_search_movie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:hint="@string/edit_text_search_movie" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_movie"
         android:layout_width="match_parent"
