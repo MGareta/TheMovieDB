@@ -42,7 +42,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApiSource(retrofit:Retrofit): ApiSource {
+    fun provideApiSource(retrofit: Retrofit): ApiSource {
         return ApiSourceImpl(retrofit)
     }
 

@@ -1,10 +1,7 @@
 package mgareta.themoviedb.util
 
-import io.reactivex.Observable
-import io.reactivex.ObservableSource
 import io.reactivex.ObservableTransformer
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.annotations.NonNull
 import io.reactivex.schedulers.Schedulers
 
 /**
@@ -13,8 +10,8 @@ import io.reactivex.schedulers.Schedulers
 
 class RxTransformer {
 
-    fun <T> applyIOSchedulers():ObservableTransformer<T, T> {
-        return ObservableTransformer<T, T> { upstream ->
+    fun <T> applyIOSchedulers(): ObservableTransformer<T, T> {
+        return ObservableTransformer { upstream ->
             upstream.observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
         }
     }

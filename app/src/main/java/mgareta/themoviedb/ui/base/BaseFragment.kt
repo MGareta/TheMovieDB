@@ -15,6 +15,7 @@ import mgareta.themoviedb.di.app.AppComponent
  * Created by marc on 16/03/18.
  */
 
+//Not Used
 abstract class BaseFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -31,7 +32,7 @@ abstract class BaseFragment : Fragment() {
     protected abstract fun getLayoutId(): Int
 
     @CallSuper
-    protected fun onViewReady() {
+    private fun onViewReady() {
         resolveDaggerDependency()
     }
 
@@ -39,7 +40,7 @@ abstract class BaseFragment : Fragment() {
         return ((context as Activity).application as TheMovieDBApp).appComponent
     }
 
-    protected fun resolveDaggerDependency() {
+    private fun resolveDaggerDependency() {
 
     }
 }

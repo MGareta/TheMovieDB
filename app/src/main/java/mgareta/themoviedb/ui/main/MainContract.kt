@@ -11,8 +11,6 @@ class MainContract {
 
     interface View : BaseView {
 
-        fun isConnect(): Boolean
-
         fun loadMovieList(movieList: ArrayList<ResultMovie>)
 
         fun loadMoreMovieList(movieList: ArrayList<ResultMovie>)

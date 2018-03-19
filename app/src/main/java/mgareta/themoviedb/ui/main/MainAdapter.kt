@@ -15,7 +15,7 @@ import mgareta.themoviedb.data.rest.model.ResultMovie
  * Created by marc on 17/03/18.
  */
 
-class MainAdapter<in T> : RecyclerView.Adapter<MainAdapter.MainMovieViewHolder>() {
+class MainAdapter : RecyclerView.Adapter<MainAdapter.MainMovieViewHolder>() {
 
     private var movieList: ArrayList<ResultMovie> = ArrayList()
 
@@ -53,11 +53,11 @@ class MainAdapter<in T> : RecyclerView.Adapter<MainAdapter.MainMovieViewHolder>(
                 .into(holder.imageViewPoster)
     }
 
-    class MainMovieViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val imageViewPoster: ImageView = itemView.findViewById<ImageView>(R.id.image_view_poster)
+    class MainMovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val imageViewPoster: ImageView = itemView.findViewById(R.id.image_view_poster)
 
-        val textViewTitle: TextView = itemView.findViewById<TextView>(R.id.text_view_title)
-        val textViewReleaseDate: TextView = itemView.findViewById<TextView>(R.id.text_view_release_date)
-        val textViewOverview: TextView = itemView.findViewById<TextView>(R.id.text_view_overview)
+        val textViewTitle: TextView = itemView.findViewById(R.id.text_view_title)
+        val textViewReleaseDate: TextView = itemView.findViewById(R.id.text_view_release_date)
+        val textViewOverview: TextView = itemView.findViewById(R.id.text_view_overview)
     }
 }

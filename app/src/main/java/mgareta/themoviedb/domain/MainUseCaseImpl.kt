@@ -12,14 +12,14 @@ import mgareta.themoviedb.data.rest.model.ResultMovie
 class MainUseCaseImpl(private val apiSource: ApiSource) : MainUseCase {
 
     override fun getPopularMovie(page: Int): Observable<ResponseResultList<ResultMovie>> {
-        return apiSource.getPopularMovie(page).map({
-            resultList -> resultList
+        return apiSource.getPopularMovie(page).map({ resultList ->
+            resultList
         })
     }
 
     override fun getMovieSearch(page: Int, query: String): Observable<ResponseResultList<ResultMovie>> {
-        return apiSource.getMovieSearch(page, query).map({
-            resultList -> resultList
+        return apiSource.getMovieSearch(page, query).map({ resultList ->
+            resultList
         })
     }
 }
