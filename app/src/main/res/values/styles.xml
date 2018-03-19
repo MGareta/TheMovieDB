@@ -8,13 +8,24 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- RecyclerView theme. -->
+    <style name="RecyclerViewTheme">
+        <item name="android:overScrollMode">never</item>
+    </style>
+
+    <!-- EditText Search movie theme. -->
+    <style name="EditTextSearchMovieTheme">
+        <item name="android:drawableStart">@android:drawable/ic_menu_search</item>
+        <item name="android:hint">@string/edit_text_search_movie</item>
+    </style>
+
     <!-- TextView Movie Title theme. -->
-    <style name="TextViewTitle" parent="TextAppearance.AppCompat.Title" />
+    <style name="TextViewTitleTheme" parent="TextAppearance.AppCompat.Title" />
 
     <!-- TextView Movie Release Date theme. -->
-    <style name="TextViewReleaseDate" parent="TextAppearance.AppCompat.Subhead" />
+    <style name="TextViewReleaseDateTheme" parent="TextAppearance.AppCompat.Subhead" />
 
     <!-- TextView Movie Overview theme. -->
-    <style name="TextViewOverview" parent="TextAppearance.AppCompat.Body1" />
+    <style name="TextViewOverviewTheme" parent="TextAppearance.AppCompat.Body1" />
 
 </resources>
