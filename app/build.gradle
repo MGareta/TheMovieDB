@@ -48,6 +48,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation ('com.android.support.test.espresso:espresso-contrib:3.0.1', {
+        exclude module: 'recyclerview-v7'
+    })
     androidTestImplementation 'org.mockito:mockito-core:2.7.21'
     androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:2.2.0"
     androidTestImplementation "com.nhaarman:mockito-kotlin:1.4.0"
@@ -68,5 +71,5 @@ dependencies {
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.0.0-RC0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC0'
+    kapt 'com.github.bumptech.glide:compiler:4.0.0-RC0'
 }
